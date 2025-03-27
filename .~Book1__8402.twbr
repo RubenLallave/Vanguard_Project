@@ -1,0 +1,1931 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20251.25.0313.2002                               -->
+<workbook original-version='18.1' source-build='2025.1.0 (20251.25.0313.2002)' source-platform='mac' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <AccessibleZoneTabOrder />
+    <AnimationOnByDefault />
+    <AutoCreateAndUpdateDSDPhoneLayouts />
+    <MarkAnimation />
+    <ObjectModelEncapsulateLegacy />
+    <ObjectModelExtractV2 />
+    <ObjectModelTableType />
+    <SchemaViewerObjectModel />
+    <SetMembershipControl />
+    <SheetIdentifierTracking />
+    <SortTagCleanup />
+    <_.fcp.VConnDownstreamExtractsWithWarnings.true...VConnDownstreamExtractsWithWarnings />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='df_final_demo_experiment' inline='true' name='federated.06nusnh1yvi7ad1gnk1421ny5gii' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='df_final_demo_experiment' name='textscan.1shhu360d1y5pv12oqj170cwy8x5'>
+            <connection class='textscan' directory='/Users/rafalkolakowski/Desktop/DA/Week 6/project/Vanguard_Project' filename='df_final_demo_experiment.csv' password='' server='' />
+          </named-connection>
+          <named-connection caption='final_web' name='textscan.06kqhn81it6ad017gxe6311zc276'>
+            <connection class='textscan' directory='/Users/rafalkolakowski/Desktop/DA/Week 6/project/Vanguard_Project' filename='final_web.csv' password='' server='' />
+          </named-connection>
+          <named-connection caption='general_metrics_fixed' name='textscan.0acbgho1a7zqb613nh8450iy70n1'>
+            <connection class='textscan' directory='/Users/rafalkolakowski/Desktop/DA/Week 6/project/Vanguard_Project' filename='general_metrics_fixed.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <relation type='collection'>
+          <relation connection='textscan.1shhu360d1y5pv12oqj170cwy8x5' name='df_final_demo_experiment.csv' table='[df_final_demo_experiment#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en' separator=','>
+              <column datatype='integer' name='client_id' ordinal='0' />
+              <column datatype='integer' name='client_tenure_years' ordinal='1' />
+              <column datatype='integer' name='client_tenure_months' ordinal='2' />
+              <column datatype='real' name='client_age' ordinal='3' />
+              <column datatype='string' name='gender' ordinal='4' />
+              <column datatype='integer' name='num_accounts' ordinal='5' />
+              <column datatype='real' name='balance' ordinal='6' />
+              <column datatype='integer' name='calls_last_6_months' ordinal='7' />
+              <column datatype='integer' name='logins_last_6_months' ordinal='8' />
+              <column datatype='string' name='Variation' ordinal='9' />
+            </columns>
+          </relation>
+          <relation connection='textscan.06kqhn81it6ad017gxe6311zc276' name='final_web.csv' table='[final_web#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en' separator=','>
+              <column datatype='integer' name='client_id' ordinal='0' />
+              <column datatype='string' name='visitor_id' ordinal='1' />
+              <column datatype='string' name='visit_id' ordinal='2' />
+              <column datatype='string' name='process_step' ordinal='3' />
+              <column datatype='datetime' name='date_time' ordinal='4' />
+              <column datatype='datetime' name='datetime' ordinal='5' />
+              <column datatype='real' name='time_spent' ordinal='6' />
+              <column datatype='string' name='previous_step' ordinal='7' />
+              <column datatype='integer' name='process_step_number' ordinal='8' />
+              <column datatype='real' name='previous_step_number' ordinal='9' />
+              <column datatype='boolean' name='error' ordinal='10' />
+            </columns>
+          </relation>
+          <relation connection='textscan.06kqhn81it6ad017gxe6311zc276' name='general_metrics_fixed.csv' table='[general_metrics_fixed#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en' separator=','>
+              <column datatype='string' name='Variation' ordinal='0' />
+              <column datatype='string' name='metric' ordinal='1' />
+              <column datatype='real' name='value' ordinal='2' />
+            </columns>
+          </relation>
+        </relation>
+        <cols>
+          <map key='[Variation (general_metrics_fixed.csv)]' value='[general_metrics_fixed.csv].[Variation]' />
+          <map key='[Variation]' value='[df_final_demo_experiment.csv].[Variation]' />
+          <map key='[balance]' value='[df_final_demo_experiment.csv].[balance]' />
+          <map key='[calls_last_6_months]' value='[df_final_demo_experiment.csv].[calls_last_6_months]' />
+          <map key='[client_age]' value='[df_final_demo_experiment.csv].[client_age]' />
+          <map key='[client_id (final_web.csv)]' value='[final_web.csv].[client_id]' />
+          <map key='[client_id]' value='[df_final_demo_experiment.csv].[client_id]' />
+          <map key='[client_tenure_months]' value='[df_final_demo_experiment.csv].[client_tenure_months]' />
+          <map key='[client_tenure_years]' value='[df_final_demo_experiment.csv].[client_tenure_years]' />
+          <map key='[date_time]' value='[final_web.csv].[date_time]' />
+          <map key='[datetime]' value='[final_web.csv].[datetime]' />
+          <map key='[error]' value='[final_web.csv].[error]' />
+          <map key='[gender]' value='[df_final_demo_experiment.csv].[gender]' />
+          <map key='[logins_last_6_months]' value='[df_final_demo_experiment.csv].[logins_last_6_months]' />
+          <map key='[metric]' value='[general_metrics_fixed.csv].[metric]' />
+          <map key='[num_accounts]' value='[df_final_demo_experiment.csv].[num_accounts]' />
+          <map key='[previous_step]' value='[final_web.csv].[previous_step]' />
+          <map key='[previous_step_number]' value='[final_web.csv].[previous_step_number]' />
+          <map key='[process_step]' value='[final_web.csv].[process_step]' />
+          <map key='[process_step_number]' value='[final_web.csv].[process_step_number]' />
+          <map key='[time_spent]' value='[final_web.csv].[time_spent]' />
+          <map key='[value]' value='[general_metrics_fixed.csv].[value]' />
+          <map key='[visit_id]' value='[final_web.csv].[visit_id]' />
+          <map key='[visitor_id]' value='[final_web.csv].[visitor_id]' />
+        </cols>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[df_final_demo_experiment.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_GB&quot;</attribute>
+              <attribute datatype='string' name='currency'>&quot;¤&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[final_web.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_GB&quot;</attribute>
+              <attribute datatype='string' name='currency'>&quot;¤&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[general_metrics_fixed.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_GB&quot;</attribute>
+              <attribute datatype='string' name='currency'>&quot;¤&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>client_id</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[client_id]</local-name>
+            <parent-name>[df_final_demo_experiment.csv]</parent-name>
+            <remote-alias>client_id</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[df_final_demo_experiment.csv_AEDACFA5CC304FA5B565AF7598FFB065]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>client_tenure_years</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[client_tenure_years]</local-name>
+            <parent-name>[df_final_demo_experiment.csv]</parent-name>
+            <remote-alias>client_tenure_years</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[df_final_demo_experiment.csv_AEDACFA5CC304FA5B565AF7598FFB065]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>client_tenure_months</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[client_tenure_months]</local-name>
+            <parent-name>[df_final_demo_experiment.csv]</parent-name>
+            <remote-alias>client_tenure_months</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[df_final_demo_experiment.csv_AEDACFA5CC304FA5B565AF7598FFB065]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>client_age</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[client_age]</local-name>
+            <parent-name>[df_final_demo_experiment.csv]</parent-name>
+            <remote-alias>client_age</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[df_final_demo_experiment.csv_AEDACFA5CC304FA5B565AF7598FFB065]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>gender</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[gender]</local-name>
+            <parent-name>[df_final_demo_experiment.csv]</parent-name>
+            <remote-alias>gender</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[df_final_demo_experiment.csv_AEDACFA5CC304FA5B565AF7598FFB065]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>num_accounts</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[num_accounts]</local-name>
+            <parent-name>[df_final_demo_experiment.csv]</parent-name>
+            <remote-alias>num_accounts</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[df_final_demo_experiment.csv_AEDACFA5CC304FA5B565AF7598FFB065]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>balance</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[balance]</local-name>
+            <parent-name>[df_final_demo_experiment.csv]</parent-name>
+            <remote-alias>balance</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[df_final_demo_experiment.csv_AEDACFA5CC304FA5B565AF7598FFB065]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>calls_last_6_months</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[calls_last_6_months]</local-name>
+            <parent-name>[df_final_demo_experiment.csv]</parent-name>
+            <remote-alias>calls_last_6_months</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[df_final_demo_experiment.csv_AEDACFA5CC304FA5B565AF7598FFB065]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>logins_last_6_months</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[logins_last_6_months]</local-name>
+            <parent-name>[df_final_demo_experiment.csv]</parent-name>
+            <remote-alias>logins_last_6_months</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[df_final_demo_experiment.csv_AEDACFA5CC304FA5B565AF7598FFB065]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Variation</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Variation]</local-name>
+            <parent-name>[df_final_demo_experiment.csv]</parent-name>
+            <remote-alias>Variation</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[df_final_demo_experiment.csv_AEDACFA5CC304FA5B565AF7598FFB065]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>client_id</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[client_id (final_web.csv)]</local-name>
+            <parent-name>[final_web.csv]</parent-name>
+            <remote-alias>client_id</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[final_web.csv_08F153A61AFB4072B60CD1F1A364BD73]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>visitor_id</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[visitor_id]</local-name>
+            <parent-name>[final_web.csv]</parent-name>
+            <remote-alias>visitor_id</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[final_web.csv_08F153A61AFB4072B60CD1F1A364BD73]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>visit_id</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[visit_id]</local-name>
+            <parent-name>[final_web.csv]</parent-name>
+            <remote-alias>visit_id</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[final_web.csv_08F153A61AFB4072B60CD1F1A364BD73]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>process_step</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[process_step]</local-name>
+            <parent-name>[final_web.csv]</parent-name>
+            <remote-alias>process_step</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[final_web.csv_08F153A61AFB4072B60CD1F1A364BD73]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>date_time</remote-name>
+            <remote-type>135</remote-type>
+            <local-name>[date_time]</local-name>
+            <parent-name>[final_web.csv]</parent-name>
+            <remote-alias>date_time</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>datetime</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[final_web.csv_08F153A61AFB4072B60CD1F1A364BD73]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>datetime</remote-name>
+            <remote-type>135</remote-type>
+            <local-name>[datetime]</local-name>
+            <parent-name>[final_web.csv]</parent-name>
+            <remote-alias>datetime</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>datetime</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[final_web.csv_08F153A61AFB4072B60CD1F1A364BD73]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>time_spent</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[time_spent]</local-name>
+            <parent-name>[final_web.csv]</parent-name>
+            <remote-alias>time_spent</remote-alias>
+            <ordinal>16</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[final_web.csv_08F153A61AFB4072B60CD1F1A364BD73]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>previous_step</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[previous_step]</local-name>
+            <parent-name>[final_web.csv]</parent-name>
+            <remote-alias>previous_step</remote-alias>
+            <ordinal>17</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[final_web.csv_08F153A61AFB4072B60CD1F1A364BD73]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>process_step_number</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[process_step_number]</local-name>
+            <parent-name>[final_web.csv]</parent-name>
+            <remote-alias>process_step_number</remote-alias>
+            <ordinal>18</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[final_web.csv_08F153A61AFB4072B60CD1F1A364BD73]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>previous_step_number</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[previous_step_number]</local-name>
+            <parent-name>[final_web.csv]</parent-name>
+            <remote-alias>previous_step_number</remote-alias>
+            <ordinal>19</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[final_web.csv_08F153A61AFB4072B60CD1F1A364BD73]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>error</remote-name>
+            <remote-type>11</remote-type>
+            <local-name>[error]</local-name>
+            <parent-name>[final_web.csv]</parent-name>
+            <remote-alias>error</remote-alias>
+            <ordinal>20</ordinal>
+            <local-type>boolean</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[final_web.csv_08F153A61AFB4072B60CD1F1A364BD73]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Variation</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Variation (general_metrics_fixed.csv)]</local-name>
+            <parent-name>[general_metrics_fixed.csv]</parent-name>
+            <remote-alias>Variation</remote-alias>
+            <ordinal>21</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[general_metrics_fixed.csv_A94AEDCF5BEC4F998CBCAA09758E97B7]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>metric</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[metric]</local-name>
+            <parent-name>[general_metrics_fixed.csv]</parent-name>
+            <remote-alias>metric</remote-alias>
+            <ordinal>22</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[general_metrics_fixed.csv_A94AEDCF5BEC4F998CBCAA09758E97B7]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>value</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[value]</local-name>
+            <parent-name>[general_metrics_fixed.csv]</parent-name>
+            <remote-alias>value</remote-alias>
+            <ordinal>23</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[general_metrics_fixed.csv_A94AEDCF5BEC4F998CBCAA09758E97B7]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='age_group' datatype='string' name='[Calculation_575827495133151232]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='IF [client_age] &lt; 30 THEN &apos;YOUNG-ADULT 0-30&apos;&#10;ELSEIF [client_age] &gt; 60 THEN &apos;SENIOR 60+&apos;&#10;ELSE &apos;ADULT 30-60&apos;&#10;END' />
+      </column>
+      <column caption='Variation (general metrics fixed.csv)' datatype='string' name='[Variation (general_metrics_fixed.csv)]' role='dimension' type='nominal' />
+      <column datatype='string' name='[Variation]' role='dimension' type='nominal' />
+      <column caption='df_final_demo_experiment.csv' datatype='table' name='[__tableau_internal_object_id__].[df_final_demo_experiment.csv_AEDACFA5CC304FA5B565AF7598FFB065]' role='measure' type='quantitative' />
+      <column caption='final_web.csv' datatype='table' name='[__tableau_internal_object_id__].[final_web.csv_08F153A61AFB4072B60CD1F1A364BD73]' role='measure' type='quantitative' />
+      <column caption='general_metrics_fixed.csv' datatype='table' name='[__tableau_internal_object_id__].[general_metrics_fixed.csv_A94AEDCF5BEC4F998CBCAA09758E97B7]' role='measure' type='quantitative' />
+      <column caption='Balance' datatype='real' name='[balance]' role='measure' type='quantitative' />
+      <column caption='Calls Last 6 Months' datatype='integer' name='[calls_last_6_months]' role='measure' type='quantitative' />
+      <column caption='Client Age' datatype='real' name='[client_age]' role='measure' type='quantitative' />
+      <column caption='Client Id (Final Web.Csv)' datatype='integer' name='[client_id (final_web.csv)]' role='dimension' type='ordinal' />
+      <column caption='Client Id' datatype='integer' name='[client_id]' role='dimension' type='ordinal' />
+      <column caption='Client Tenure Months' datatype='integer' name='[client_tenure_months]' role='measure' type='quantitative' />
+      <column caption='Client Tenure Years' datatype='integer' name='[client_tenure_years]' role='measure' type='quantitative' />
+      <column caption='Date Time' datatype='datetime' name='[date_time]' role='dimension' type='ordinal' />
+      <column caption='Datetime' datatype='datetime' name='[datetime]' role='dimension' type='ordinal' />
+      <column caption='Error' datatype='boolean' name='[error]' role='dimension' type='nominal' />
+      <column caption='Gender' datatype='string' name='[gender]' role='dimension' type='nominal' />
+      <column caption='Logins Last 6 Months' datatype='integer' name='[logins_last_6_months]' role='measure' type='quantitative' />
+      <column caption='Metric' datatype='string' name='[metric]' role='dimension' type='nominal' />
+      <column caption='Num Accounts' datatype='integer' name='[num_accounts]' role='measure' type='quantitative' />
+      <column caption='Previous Step' datatype='string' name='[previous_step]' role='dimension' type='nominal' />
+      <column caption='Previous Step Number' datatype='real' name='[previous_step_number]' role='dimension' type='ordinal' />
+      <column caption='Process Step' datatype='string' name='[process_step]' role='dimension' type='nominal' />
+      <column caption='Process Step Number' datatype='integer' name='[process_step_number]' role='dimension' type='ordinal' />
+      <column caption='Time Spent' datatype='real' name='[time_spent]' role='measure' type='quantitative' />
+      <column caption='Value' datatype='real' name='[value]' role='measure' type='quantitative' />
+      <column caption='Visit Id' datatype='string' name='[visit_id]' role='dimension' type='nominal' />
+      <column caption='Visitor Id' datatype='string' name='[visitor_id]' role='dimension' type='nominal' />
+      <column-instance column='[Calculation_575827495133151232]' derivation='None' name='[none:Calculation_575827495133151232:nk]' pivot='key' type='nominal' />
+      <column-instance column='[Variation]' derivation='None' name='[none:Variation:nk]' pivot='key' type='nominal' />
+      <extract _.fcp.VConnDownstreamExtractsWithWarnings.true...user-specific='false' count='-1' enabled='true' object-id='' units='records'>
+        <connection access_mode='readonly' author-locale='en_US' class='hyper' dbname='/var/folders/h0/4jpjr28x5yj6tn2nqwlp8cn40000gn/T/tableau-temp/#TableauTemp_1kgpqin00qb4p41amwlo50f0hc9b.hyper' default-settings='hyper' schema='Extract' sslmode='' tablename='Extract' update-time='03/27/2025 11:03:21 AM' username='tableau_internal_user'>
+          <relation type='collection'>
+            <relation name='df_final_demo_experiment.csv_AEDACFA5CC304FA5B565AF7598FFB065' table='[Extract].[df_final_demo_experiment.csv_AEDACFA5CC304FA5B565AF7598FFB065]' type='table' />
+            <relation name='final_web.csv_08F153A61AFB4072B60CD1F1A364BD73' table='[Extract].[final_web.csv_08F153A61AFB4072B60CD1F1A364BD73]' type='table' />
+            <relation name='general_metrics_fixed.csv_A94AEDCF5BEC4F998CBCAA09758E97B7' table='[Extract].[general_metrics_fixed.csv_A94AEDCF5BEC4F998CBCAA09758E97B7]' type='table' />
+          </relation>
+          <cols>
+            <map key='[Variation (general_metrics_fixed.csv)]' value='[general_metrics_fixed.csv_A94AEDCF5BEC4F998CBCAA09758E97B7].[Variation]' />
+            <map key='[Variation]' value='[df_final_demo_experiment.csv_AEDACFA5CC304FA5B565AF7598FFB065].[Variation]' />
+            <map key='[balance]' value='[df_final_demo_experiment.csv_AEDACFA5CC304FA5B565AF7598FFB065].[balance]' />
+            <map key='[calls_last_6_months]' value='[df_final_demo_experiment.csv_AEDACFA5CC304FA5B565AF7598FFB065].[calls_last_6_months]' />
+            <map key='[client_age]' value='[df_final_demo_experiment.csv_AEDACFA5CC304FA5B565AF7598FFB065].[client_age]' />
+            <map key='[client_id (final_web.csv)]' value='[final_web.csv_08F153A61AFB4072B60CD1F1A364BD73].[client_id]' />
+            <map key='[client_id]' value='[df_final_demo_experiment.csv_AEDACFA5CC304FA5B565AF7598FFB065].[client_id]' />
+            <map key='[client_tenure_months]' value='[df_final_demo_experiment.csv_AEDACFA5CC304FA5B565AF7598FFB065].[client_tenure_months]' />
+            <map key='[client_tenure_years]' value='[df_final_demo_experiment.csv_AEDACFA5CC304FA5B565AF7598FFB065].[client_tenure_years]' />
+            <map key='[date_time]' value='[final_web.csv_08F153A61AFB4072B60CD1F1A364BD73].[date_time]' />
+            <map key='[datetime]' value='[final_web.csv_08F153A61AFB4072B60CD1F1A364BD73].[datetime]' />
+            <map key='[error]' value='[final_web.csv_08F153A61AFB4072B60CD1F1A364BD73].[error]' />
+            <map key='[gender]' value='[df_final_demo_experiment.csv_AEDACFA5CC304FA5B565AF7598FFB065].[gender]' />
+            <map key='[logins_last_6_months]' value='[df_final_demo_experiment.csv_AEDACFA5CC304FA5B565AF7598FFB065].[logins_last_6_months]' />
+            <map key='[metric]' value='[general_metrics_fixed.csv_A94AEDCF5BEC4F998CBCAA09758E97B7].[metric]' />
+            <map key='[num_accounts]' value='[df_final_demo_experiment.csv_AEDACFA5CC304FA5B565AF7598FFB065].[num_accounts]' />
+            <map key='[previous_step]' value='[final_web.csv_08F153A61AFB4072B60CD1F1A364BD73].[previous_step]' />
+            <map key='[previous_step_number]' value='[final_web.csv_08F153A61AFB4072B60CD1F1A364BD73].[previous_step_number]' />
+            <map key='[process_step]' value='[final_web.csv_08F153A61AFB4072B60CD1F1A364BD73].[process_step]' />
+            <map key='[process_step_number]' value='[final_web.csv_08F153A61AFB4072B60CD1F1A364BD73].[process_step_number]' />
+            <map key='[time_spent]' value='[final_web.csv_08F153A61AFB4072B60CD1F1A364BD73].[time_spent]' />
+            <map key='[value]' value='[general_metrics_fixed.csv_A94AEDCF5BEC4F998CBCAA09758E97B7].[value]' />
+            <map key='[visit_id]' value='[final_web.csv_08F153A61AFB4072B60CD1F1A364BD73].[visit_id]' />
+            <map key='[visitor_id]' value='[final_web.csv_08F153A61AFB4072B60CD1F1A364BD73].[visitor_id]' />
+          </cols>
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>client_id</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[client_id]</local-name>
+              <parent-name>[df_final_demo_experiment.csv_AEDACFA5CC304FA5B565AF7598FFB065]</parent-name>
+              <remote-alias>client_id</remote-alias>
+              <ordinal>0</ordinal>
+              <family>df_final_demo_experiment.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>44867</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[df_final_demo_experiment.csv_AEDACFA5CC304FA5B565AF7598FFB065]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>client_tenure_years</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[client_tenure_years]</local-name>
+              <parent-name>[df_final_demo_experiment.csv_AEDACFA5CC304FA5B565AF7598FFB065]</parent-name>
+              <remote-alias>client_tenure_years</remote-alias>
+              <ordinal>1</ordinal>
+              <family>df_final_demo_experiment.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>65</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[df_final_demo_experiment.csv_AEDACFA5CC304FA5B565AF7598FFB065]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>client_tenure_months</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[client_tenure_months]</local-name>
+              <parent-name>[df_final_demo_experiment.csv_AEDACFA5CC304FA5B565AF7598FFB065]</parent-name>
+              <remote-alias>client_tenure_months</remote-alias>
+              <ordinal>2</ordinal>
+              <family>df_final_demo_experiment.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>702</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[df_final_demo_experiment.csv_AEDACFA5CC304FA5B565AF7598FFB065]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>client_age</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[client_age]</local-name>
+              <parent-name>[df_final_demo_experiment.csv_AEDACFA5CC304FA5B565AF7598FFB065]</parent-name>
+              <remote-alias>client_age</remote-alias>
+              <ordinal>3</ordinal>
+              <family>df_final_demo_experiment.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>157</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[df_final_demo_experiment.csv_AEDACFA5CC304FA5B565AF7598FFB065]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>gender</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[gender]</local-name>
+              <parent-name>[df_final_demo_experiment.csv_AEDACFA5CC304FA5B565AF7598FFB065]</parent-name>
+              <remote-alias>gender</remote-alias>
+              <ordinal>4</ordinal>
+              <family>df_final_demo_experiment.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+              <object-id>[df_final_demo_experiment.csv_AEDACFA5CC304FA5B565AF7598FFB065]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>num_accounts</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[num_accounts]</local-name>
+              <parent-name>[df_final_demo_experiment.csv_AEDACFA5CC304FA5B565AF7598FFB065]</parent-name>
+              <remote-alias>num_accounts</remote-alias>
+              <ordinal>5</ordinal>
+              <family>df_final_demo_experiment.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>4</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[df_final_demo_experiment.csv_AEDACFA5CC304FA5B565AF7598FFB065]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>balance</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[balance]</local-name>
+              <parent-name>[df_final_demo_experiment.csv_AEDACFA5CC304FA5B565AF7598FFB065]</parent-name>
+              <remote-alias>balance</remote-alias>
+              <ordinal>6</ordinal>
+              <family>df_final_demo_experiment.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>44867</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[df_final_demo_experiment.csv_AEDACFA5CC304FA5B565AF7598FFB065]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>calls_last_6_months</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[calls_last_6_months]</local-name>
+              <parent-name>[df_final_demo_experiment.csv_AEDACFA5CC304FA5B565AF7598FFB065]</parent-name>
+              <remote-alias>calls_last_6_months</remote-alias>
+              <ordinal>7</ordinal>
+              <family>df_final_demo_experiment.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>7</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[df_final_demo_experiment.csv_AEDACFA5CC304FA5B565AF7598FFB065]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>logins_last_6_months</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[logins_last_6_months]</local-name>
+              <parent-name>[df_final_demo_experiment.csv_AEDACFA5CC304FA5B565AF7598FFB065]</parent-name>
+              <remote-alias>logins_last_6_months</remote-alias>
+              <ordinal>8</ordinal>
+              <family>df_final_demo_experiment.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>7</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[df_final_demo_experiment.csv_AEDACFA5CC304FA5B565AF7598FFB065]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Variation</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Variation]</local-name>
+              <parent-name>[df_final_demo_experiment.csv_AEDACFA5CC304FA5B565AF7598FFB065]</parent-name>
+              <remote-alias>Variation</remote-alias>
+              <ordinal>9</ordinal>
+              <family>df_final_demo_experiment.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+              <object-id>[df_final_demo_experiment.csv_AEDACFA5CC304FA5B565AF7598FFB065]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>client_id</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[client_id (final_web.csv)]</local-name>
+              <parent-name>[final_web.csv_08F153A61AFB4072B60CD1F1A364BD73]</parent-name>
+              <remote-alias>client_id</remote-alias>
+              <ordinal>10</ordinal>
+              <family>final_web.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>280623</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[final_web.csv_08F153A61AFB4072B60CD1F1A364BD73]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>visitor_id</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[visitor_id]</local-name>
+              <parent-name>[final_web.csv_08F153A61AFB4072B60CD1F1A364BD73]</parent-name>
+              <remote-alias>visitor_id</remote-alias>
+              <ordinal>11</ordinal>
+              <family>final_web.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>308159</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+              <object-id>[final_web.csv_08F153A61AFB4072B60CD1F1A364BD73]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>visit_id</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[visit_id]</local-name>
+              <parent-name>[final_web.csv_08F153A61AFB4072B60CD1F1A364BD73]</parent-name>
+              <remote-alias>visit_id</remote-alias>
+              <ordinal>12</ordinal>
+              <family>final_web.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>335763</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+              <object-id>[final_web.csv_08F153A61AFB4072B60CD1F1A364BD73]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>process_step</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[process_step]</local-name>
+              <parent-name>[final_web.csv_08F153A61AFB4072B60CD1F1A364BD73]</parent-name>
+              <remote-alias>process_step</remote-alias>
+              <ordinal>13</ordinal>
+              <family>final_web.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>5</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+              <object-id>[final_web.csv_08F153A61AFB4072B60CD1F1A364BD73]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>date_time</remote-name>
+              <remote-type>135</remote-type>
+              <local-name>[date_time]</local-name>
+              <parent-name>[final_web.csv_08F153A61AFB4072B60CD1F1A364BD73]</parent-name>
+              <remote-alias>date_time</remote-alias>
+              <ordinal>14</ordinal>
+              <family>final_web.csv</family>
+              <local-type>datetime</local-type>
+              <aggregation>Year</aggregation>
+              <approx-count>723090</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[final_web.csv_08F153A61AFB4072B60CD1F1A364BD73]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>datetime</remote-name>
+              <remote-type>135</remote-type>
+              <local-name>[datetime]</local-name>
+              <parent-name>[final_web.csv_08F153A61AFB4072B60CD1F1A364BD73]</parent-name>
+              <remote-alias>datetime</remote-alias>
+              <ordinal>15</ordinal>
+              <family>final_web.csv</family>
+              <local-type>datetime</local-type>
+              <aggregation>Year</aggregation>
+              <approx-count>723090</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[final_web.csv_08F153A61AFB4072B60CD1F1A364BD73]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>time_spent</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[time_spent]</local-name>
+              <parent-name>[final_web.csv_08F153A61AFB4072B60CD1F1A364BD73]</parent-name>
+              <remote-alias>time_spent</remote-alias>
+              <ordinal>16</ordinal>
+              <family>final_web.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>2226</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[final_web.csv_08F153A61AFB4072B60CD1F1A364BD73]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>previous_step</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[previous_step]</local-name>
+              <parent-name>[final_web.csv_08F153A61AFB4072B60CD1F1A364BD73]</parent-name>
+              <remote-alias>previous_step</remote-alias>
+              <ordinal>17</ordinal>
+              <family>final_web.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>6</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+              <object-id>[final_web.csv_08F153A61AFB4072B60CD1F1A364BD73]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>process_step_number</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[process_step_number]</local-name>
+              <parent-name>[final_web.csv_08F153A61AFB4072B60CD1F1A364BD73]</parent-name>
+              <remote-alias>process_step_number</remote-alias>
+              <ordinal>18</ordinal>
+              <family>final_web.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>5</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[final_web.csv_08F153A61AFB4072B60CD1F1A364BD73]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>previous_step_number</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[previous_step_number]</local-name>
+              <parent-name>[final_web.csv_08F153A61AFB4072B60CD1F1A364BD73]</parent-name>
+              <remote-alias>previous_step_number</remote-alias>
+              <ordinal>19</ordinal>
+              <family>final_web.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>6</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[final_web.csv_08F153A61AFB4072B60CD1F1A364BD73]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>error</remote-name>
+              <remote-type>11</remote-type>
+              <local-name>[error]</local-name>
+              <parent-name>[final_web.csv_08F153A61AFB4072B60CD1F1A364BD73]</parent-name>
+              <remote-alias>error</remote-alias>
+              <ordinal>20</ordinal>
+              <family>final_web.csv</family>
+              <local-type>boolean</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[final_web.csv_08F153A61AFB4072B60CD1F1A364BD73]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Variation</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Variation (general_metrics_fixed.csv)]</local-name>
+              <parent-name>[general_metrics_fixed.csv_A94AEDCF5BEC4F998CBCAA09758E97B7]</parent-name>
+              <remote-alias>Variation</remote-alias>
+              <ordinal>21</ordinal>
+              <family>general_metrics_fixed.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+              <object-id>[general_metrics_fixed.csv_A94AEDCF5BEC4F998CBCAA09758E97B7]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>metric</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[metric]</local-name>
+              <parent-name>[general_metrics_fixed.csv_A94AEDCF5BEC4F998CBCAA09758E97B7]</parent-name>
+              <remote-alias>metric</remote-alias>
+              <ordinal>22</ordinal>
+              <family>general_metrics_fixed.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>9</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RGB' />
+              <object-id>[general_metrics_fixed.csv_A94AEDCF5BEC4F998CBCAA09758E97B7]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>value</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[value]</local-name>
+              <parent-name>[general_metrics_fixed.csv_A94AEDCF5BEC4F998CBCAA09758E97B7]</parent-name>
+              <remote-alias>value</remote-alias>
+              <ordinal>23</ordinal>
+              <family>general_metrics_fixed.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>16</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[general_metrics_fixed.csv_A94AEDCF5BEC4F998CBCAA09758E97B7]</object-id>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[none:Variation:nk]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;Control&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Test&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:Calculation_575827495133151232:nk]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;ADULT 30-60&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;YOUNG-ADULT 0-30&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;SENIOR 60+&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+      <date-options start-of-week='monday' />
+      <object-graph>
+        <objects>
+          <object caption='df_final_demo_experiment.csv' id='df_final_demo_experiment.csv_AEDACFA5CC304FA5B565AF7598FFB065'>
+            <properties context=''>
+              <relation connection='textscan.1shhu360d1y5pv12oqj170cwy8x5' name='df_final_demo_experiment.csv' table='[df_final_demo_experiment#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en' separator=','>
+                  <column datatype='integer' name='client_id' ordinal='0' />
+                  <column datatype='integer' name='client_tenure_years' ordinal='1' />
+                  <column datatype='integer' name='client_tenure_months' ordinal='2' />
+                  <column datatype='real' name='client_age' ordinal='3' />
+                  <column datatype='string' name='gender' ordinal='4' />
+                  <column datatype='integer' name='num_accounts' ordinal='5' />
+                  <column datatype='real' name='balance' ordinal='6' />
+                  <column datatype='integer' name='calls_last_6_months' ordinal='7' />
+                  <column datatype='integer' name='logins_last_6_months' ordinal='8' />
+                  <column datatype='string' name='Variation' ordinal='9' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='df_final_demo_experiment.csv_AEDACFA5CC304FA5B565AF7598FFB065' table='[Extract].[df_final_demo_experiment.csv_AEDACFA5CC304FA5B565AF7598FFB065]' type='table' />
+            </properties>
+          </object>
+          <object caption='final_web.csv' id='final_web.csv_08F153A61AFB4072B60CD1F1A364BD73'>
+            <properties context=''>
+              <relation connection='textscan.06kqhn81it6ad017gxe6311zc276' name='final_web.csv' table='[final_web#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en' separator=','>
+                  <column datatype='integer' name='client_id' ordinal='0' />
+                  <column datatype='string' name='visitor_id' ordinal='1' />
+                  <column datatype='string' name='visit_id' ordinal='2' />
+                  <column datatype='string' name='process_step' ordinal='3' />
+                  <column datatype='datetime' name='date_time' ordinal='4' />
+                  <column datatype='datetime' name='datetime' ordinal='5' />
+                  <column datatype='real' name='time_spent' ordinal='6' />
+                  <column datatype='string' name='previous_step' ordinal='7' />
+                  <column datatype='integer' name='process_step_number' ordinal='8' />
+                  <column datatype='real' name='previous_step_number' ordinal='9' />
+                  <column datatype='boolean' name='error' ordinal='10' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='final_web.csv_08F153A61AFB4072B60CD1F1A364BD73' table='[Extract].[final_web.csv_08F153A61AFB4072B60CD1F1A364BD73]' type='table' />
+            </properties>
+          </object>
+          <object caption='general_metrics_fixed.csv' id='general_metrics_fixed.csv_A94AEDCF5BEC4F998CBCAA09758E97B7'>
+            <properties context=''>
+              <relation connection='textscan.06kqhn81it6ad017gxe6311zc276' name='general_metrics_fixed.csv' table='[general_metrics_fixed#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en' separator=','>
+                  <column datatype='string' name='Variation' ordinal='0' />
+                  <column datatype='string' name='metric' ordinal='1' />
+                  <column datatype='real' name='value' ordinal='2' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='general_metrics_fixed.csv_A94AEDCF5BEC4F998CBCAA09758E97B7' table='[Extract].[general_metrics_fixed.csv_A94AEDCF5BEC4F998CBCAA09758E97B7]' type='table' />
+            </properties>
+          </object>
+        </objects>
+        <relationships>
+          <relationship>
+            <expression op='='>
+              <expression op='[client_id]' />
+              <expression op='[client_id (final_web.csv)]' />
+            </expression>
+            <first-end-point object-id='df_final_demo_experiment.csv_AEDACFA5CC304FA5B565AF7598FFB065' />
+            <second-end-point object-id='final_web.csv_08F153A61AFB4072B60CD1F1A364BD73' />
+          </relationship>
+          <relationship>
+            <expression op='='>
+              <expression op='[Variation]' />
+              <expression op='[Variation (general_metrics_fixed.csv)]' />
+            </expression>
+            <first-end-point object-id='df_final_demo_experiment.csv_AEDACFA5CC304FA5B565AF7598FFB065' />
+            <second-end-point object-id='general_metrics_fixed.csv_A94AEDCF5BEC4F998CBCAA09758E97B7' />
+          </relationship>
+        </relationships>
+      </object-graph>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='age_group_pie_control'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='df_final_demo_experiment' name='federated.06nusnh1yvi7ad1gnk1421ny5gii' />
+          </datasources>
+          <datasource-dependencies datasource='federated.06nusnh1yvi7ad1gnk1421ny5gii'>
+            <column caption='age_group' datatype='string' name='[Calculation_575827495133151232]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='IF [client_age] &lt; 30 THEN &apos;YOUNG-ADULT 0-30&apos;&#10;ELSEIF [client_age] &gt; 60 THEN &apos;SENIOR 60+&apos;&#10;ELSE &apos;ADULT 30-60&apos;&#10;END' />
+            </column>
+            <column datatype='string' name='[Variation]' role='dimension' type='nominal' />
+            <column caption='Client Age' datatype='real' name='[client_age]' role='measure' type='quantitative' />
+            <column-instance column='[Calculation_575827495133151232]' derivation='Count' name='[cnt:Calculation_575827495133151232:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_575827495133151232]' derivation='None' name='[none:Calculation_575827495133151232:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Variation]' derivation='None' name='[none:Variation:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_575827495133151232]' derivation='Count' name='[pcto:cnt:Calculation_575827495133151232:qk]' pivot='key' type='quantitative'>
+              <table-calc ordering-type='Rows' type='PctTotal' />
+            </column-instance>
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.06nusnh1yvi7ad1gnk1421ny5gii].[none:Variation:nk]'>
+            <groupfilter function='member' level='[none:Variation:nk]' member='&quot;Control&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.06nusnh1yvi7ad1gnk1421ny5gii].[none:Variation:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='width' value='576' />
+            <format attr='height' value='421' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Pie' />
+            <encodings>
+              <color column='[federated.06nusnh1yvi7ad1gnk1421ny5gii].[none:Calculation_575827495133151232:nk]' />
+              <wedge-size column='[federated.06nusnh1yvi7ad1gnk1421ny5gii].[cnt:Calculation_575827495133151232:qk]' />
+              <text column='[federated.06nusnh1yvi7ad1gnk1421ny5gii].[none:Calculation_575827495133151232:nk]' />
+              <text column='[federated.06nusnh1yvi7ad1gnk1421ny5gii].[pcto:cnt:Calculation_575827495133151232:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+                <format attr='minheight' value='-1' />
+                <format attr='maxheight' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{CF54664A-7469-4D46-93A3-016B71854BDD}' />
+    </worksheet>
+    <worksheet name='age_group_pie_test'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='df_final_demo_experiment' name='federated.06nusnh1yvi7ad1gnk1421ny5gii' />
+          </datasources>
+          <datasource-dependencies datasource='federated.06nusnh1yvi7ad1gnk1421ny5gii'>
+            <column caption='age_group' datatype='string' name='[Calculation_575827495133151232]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='IF [client_age] &lt; 30 THEN &apos;YOUNG-ADULT 0-30&apos;&#10;ELSEIF [client_age] &gt; 60 THEN &apos;SENIOR 60+&apos;&#10;ELSE &apos;ADULT 30-60&apos;&#10;END' />
+            </column>
+            <column datatype='string' name='[Variation]' role='dimension' type='nominal' />
+            <column caption='Client Age' datatype='real' name='[client_age]' role='measure' type='quantitative' />
+            <column-instance column='[Calculation_575827495133151232]' derivation='Count' name='[cnt:Calculation_575827495133151232:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_575827495133151232]' derivation='None' name='[none:Calculation_575827495133151232:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Variation]' derivation='None' name='[none:Variation:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_575827495133151232]' derivation='Count' name='[pcto:cnt:Calculation_575827495133151232:qk]' pivot='key' type='quantitative'>
+              <table-calc ordering-type='Rows' type='PctTotal' />
+            </column-instance>
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.06nusnh1yvi7ad1gnk1421ny5gii].[none:Variation:nk]'>
+            <groupfilter function='member' level='[none:Variation:nk]' member='&quot;Test&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.06nusnh1yvi7ad1gnk1421ny5gii].[none:Variation:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='width' value='576' />
+            <format attr='height' value='421' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Pie' />
+            <encodings>
+              <color column='[federated.06nusnh1yvi7ad1gnk1421ny5gii].[none:Calculation_575827495133151232:nk]' />
+              <wedge-size column='[federated.06nusnh1yvi7ad1gnk1421ny5gii].[cnt:Calculation_575827495133151232:qk]' />
+              <text column='[federated.06nusnh1yvi7ad1gnk1421ny5gii].[none:Calculation_575827495133151232:nk]' />
+              <text column='[federated.06nusnh1yvi7ad1gnk1421ny5gii].[pcto:cnt:Calculation_575827495133151232:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+                <format attr='minheight' value='-1' />
+                <format attr='maxheight' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{6B3AED41-250F-492B-A3DC-00813A06ECAF}' />
+    </worksheet>
+    <worksheet name='age_tenure'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='df_final_demo_experiment' name='federated.06nusnh1yvi7ad1gnk1421ny5gii' />
+          </datasources>
+          <datasource-dependencies datasource='federated.06nusnh1yvi7ad1gnk1421ny5gii'>
+            <column caption='Client Age' datatype='real' name='[client_age]' role='measure' type='quantitative' />
+            <column caption='Client Tenure Years' datatype='integer' name='[client_tenure_years]' role='measure' type='quantitative' />
+            <column-instance column='[client_age]' derivation='None' name='[none:client_age:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[client_tenure_years]' derivation='None' name='[none:client_tenure_years:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <trendline enable-confidence-bands='false' enable-instant-analytics='true' enabled='true' exclude-color='false' exclude-intercept='false' fit='linear' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-transparency' value='185' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.06nusnh1yvi7ad1gnk1421ny5gii].[none:client_tenure_years:qk]</rows>
+        <cols>[federated.06nusnh1yvi7ad1gnk1421ny5gii].[none:client_age:qk]</cols>
+      </table>
+      <simple-id uuid='{0B97CC9F-C967-4E38-BAF3-C3BD8F830772}' />
+    </worksheet>
+    <worksheet name='avg_time_per_step'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='df_final_demo_experiment' name='federated.06nusnh1yvi7ad1gnk1421ny5gii' />
+          </datasources>
+          <datasource-dependencies datasource='federated.06nusnh1yvi7ad1gnk1421ny5gii'>
+            <column caption='Variation (general metrics fixed.csv)' datatype='string' name='[Variation (general_metrics_fixed.csv)]' role='dimension' type='nominal' />
+            <column caption='Metric' datatype='string' name='[metric]' role='dimension' type='nominal' />
+            <column-instance column='[Variation (general_metrics_fixed.csv)]' derivation='None' name='[none:Variation (general_metrics_fixed.csv):nk]' pivot='key' type='nominal' />
+            <column-instance column='[metric]' derivation='None' name='[none:metric:nk]' pivot='key' type='nominal' />
+            <column-instance column='[value]' derivation='Sum' name='[sum:value:qk]' pivot='key' type='quantitative' />
+            <column caption='Value' datatype='real' name='[value]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.06nusnh1yvi7ad1gnk1421ny5gii].[none:metric:nk]'>
+            <groupfilter function='union' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+              <groupfilter function='member' level='[none:metric:nk]' member='&quot;confirm&quot;' />
+              <groupfilter function='member' level='[none:metric:nk]' member='&quot;start&quot;' />
+              <groupfilter function='member' level='[none:metric:nk]' member='&quot;step_1&quot;' />
+              <groupfilter function='member' level='[none:metric:nk]' member='&quot;step_2&quot;' />
+              <groupfilter function='member' level='[none:metric:nk]' member='&quot;step_3&quot;' />
+            </groupfilter>
+          </filter>
+          <manual-sort column='[federated.06nusnh1yvi7ad1gnk1421ny5gii].[none:metric:nk]' direction='ASC'>
+            <dictionary>
+              <bucket>&quot;start&quot;</bucket>
+              <bucket>&quot;step_1&quot;</bucket>
+              <bucket>&quot;step_2&quot;</bucket>
+              <bucket>&quot;step_3&quot;</bucket>
+              <bucket>&quot;confirm&quot;</bucket>
+            </dictionary>
+          </manual-sort>
+          <slices>
+            <column>[federated.06nusnh1yvi7ad1gnk1421ny5gii].[none:metric:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.06nusnh1yvi7ad1gnk1421ny5gii].[none:Variation (general_metrics_fixed.csv):nk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.06nusnh1yvi7ad1gnk1421ny5gii].[sum:value:qk]</rows>
+        <cols>([federated.06nusnh1yvi7ad1gnk1421ny5gii].[none:metric:nk] / [federated.06nusnh1yvi7ad1gnk1421ny5gii].[none:Variation (general_metrics_fixed.csv):nk])</cols>
+      </table>
+      <simple-id uuid='{7D2B310F-9C8E-4318-AFAE-E6158A941AA0}' />
+    </worksheet>
+    <worksheet name='completion_rate_control'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='df_final_demo_experiment' name='federated.06nusnh1yvi7ad1gnk1421ny5gii' />
+          </datasources>
+          <datasource-dependencies datasource='federated.06nusnh1yvi7ad1gnk1421ny5gii'>
+            <column caption='Variation (general metrics fixed.csv)' datatype='string' name='[Variation (general_metrics_fixed.csv)]' role='dimension' type='nominal' />
+            <column caption='Metric' datatype='string' name='[metric]' role='dimension' type='nominal' />
+            <column-instance column='[Variation (general_metrics_fixed.csv)]' derivation='None' name='[none:Variation (general_metrics_fixed.csv):nk]' pivot='key' type='nominal' />
+            <column-instance column='[metric]' derivation='None' name='[none:metric:nk]' pivot='key' type='nominal' />
+            <column-instance column='[value]' derivation='Sum' name='[sum:value:qk]' pivot='key' type='quantitative' />
+            <column caption='Value' datatype='real' name='[value]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.06nusnh1yvi7ad1gnk1421ny5gii].[none:Variation (general_metrics_fixed.csv):nk]'>
+            <groupfilter function='except' user:ui-domain='relevant' user:ui-enumeration='exclusive' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[none:Variation (general_metrics_fixed.csv):nk]' />
+              <groupfilter function='member' level='[none:Variation (general_metrics_fixed.csv):nk]' member='&quot;test&quot;' />
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[federated.06nusnh1yvi7ad1gnk1421ny5gii].[none:metric:nk]'>
+            <groupfilter function='member' level='[none:metric:nk]' member='&quot;completion_rate&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.06nusnh1yvi7ad1gnk1421ny5gii].[none:metric:nk]</column>
+            <column>[federated.06nusnh1yvi7ad1gnk1421ny5gii].[none:Variation (general_metrics_fixed.csv):nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='font-size' value='15' />
+          </style-rule>
+          <style-rule element='header'>
+            <format attr='width' field='[federated.06nusnh1yvi7ad1gnk1421ny5gii].[none:metric:nk]' value='132' />
+            <format attr='border-width' data-class='total' scope='rows' value='0' />
+            <format attr='border-style' data-class='total' scope='rows' value='none' />
+            <format attr='border-width' data-class='subtotal' scope='rows' value='0' />
+            <format attr='border-style' data-class='subtotal' scope='rows' value='none' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='font-size' scope='cols' value='14' />
+            <format attr='font-size' scope='rows' value='12' />
+          </style-rule>
+          <style-rule element='pane'>
+            <format attr='border-width' data-class='subtotal' scope='rows' value='0' />
+            <format attr='border-style' data-class='subtotal' scope='rows' value='none' />
+            <format attr='border-width' data-class='subtotal' scope='cols' value='0' />
+            <format attr='border-style' data-class='subtotal' scope='cols' value='none' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='display-field-labels' scope='rows' value='false' />
+            <format attr='display-field-labels' scope='cols' value='false' />
+          </style-rule>
+          <style-rule element='gridline'>
+            <format attr='stroke-size' value='0' />
+          </style-rule>
+          <style-rule element='table-div'>
+            <format attr='stroke-size' scope='rows' value='0' />
+            <format attr='line-visibility' scope='rows' value='off' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <text column='[federated.06nusnh1yvi7ad1gnk1421ny5gii].[sum:value:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+              <style-rule element='trendline'>
+                <format attr='stroke-size' value='0' />
+                <format attr='line-visibility' value='off' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.06nusnh1yvi7ad1gnk1421ny5gii].[none:metric:nk]</rows>
+        <cols>[federated.06nusnh1yvi7ad1gnk1421ny5gii].[none:Variation (general_metrics_fixed.csv):nk]</cols>
+      </table>
+      <simple-id uuid='{5C67ECBC-1813-4311-8E51-6BFA45B6AA4E}' />
+    </worksheet>
+    <worksheet name='completion_rate_graph'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='df_final_demo_experiment' name='federated.06nusnh1yvi7ad1gnk1421ny5gii' />
+          </datasources>
+          <datasource-dependencies datasource='federated.06nusnh1yvi7ad1gnk1421ny5gii'>
+            <column caption='Variation (general metrics fixed.csv)' datatype='string' name='[Variation (general_metrics_fixed.csv)]' role='dimension' type='nominal' />
+            <column caption='Metric' datatype='string' name='[metric]' role='dimension' type='nominal' />
+            <column-instance column='[Variation (general_metrics_fixed.csv)]' derivation='None' name='[none:Variation (general_metrics_fixed.csv):nk]' pivot='key' type='nominal' />
+            <column-instance column='[metric]' derivation='None' name='[none:metric:nk]' pivot='key' type='nominal' />
+            <column-instance column='[value]' derivation='Sum' name='[sum:value:qk]' pivot='key' type='quantitative' />
+            <column caption='Value' datatype='real' name='[value]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.06nusnh1yvi7ad1gnk1421ny5gii].[none:metric:nk]'>
+            <groupfilter function='member' level='[none:metric:nk]' member='&quot;completion_rate&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.06nusnh1yvi7ad1gnk1421ny5gii].[none:metric:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.06nusnh1yvi7ad1gnk1421ny5gii].[none:Variation (general_metrics_fixed.csv):nk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.06nusnh1yvi7ad1gnk1421ny5gii].[sum:value:qk]</rows>
+        <cols>([federated.06nusnh1yvi7ad1gnk1421ny5gii].[none:metric:nk] / [federated.06nusnh1yvi7ad1gnk1421ny5gii].[none:Variation (general_metrics_fixed.csv):nk])</cols>
+      </table>
+      <simple-id uuid='{721E5F21-4E8A-43E9-B742-605F6433FFAE}' />
+    </worksheet>
+    <worksheet name='completion_rate_test'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='df_final_demo_experiment' name='federated.06nusnh1yvi7ad1gnk1421ny5gii' />
+          </datasources>
+          <datasource-dependencies datasource='federated.06nusnh1yvi7ad1gnk1421ny5gii'>
+            <column caption='Variation (general metrics fixed.csv)' datatype='string' name='[Variation (general_metrics_fixed.csv)]' role='dimension' type='nominal' />
+            <column caption='Metric' datatype='string' name='[metric]' role='dimension' type='nominal' />
+            <column-instance column='[Variation (general_metrics_fixed.csv)]' derivation='None' name='[none:Variation (general_metrics_fixed.csv):nk]' pivot='key' type='nominal' />
+            <column-instance column='[metric]' derivation='None' name='[none:metric:nk]' pivot='key' type='nominal' />
+            <column-instance column='[value]' derivation='Sum' name='[sum:value:qk]' pivot='key' type='quantitative' />
+            <column caption='Value' datatype='real' name='[value]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.06nusnh1yvi7ad1gnk1421ny5gii].[none:Variation (general_metrics_fixed.csv):nk]'>
+            <groupfilter function='except' user:ui-domain='relevant' user:ui-enumeration='exclusive' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[none:Variation (general_metrics_fixed.csv):nk]' />
+              <groupfilter function='member' level='[none:Variation (general_metrics_fixed.csv):nk]' member='&quot;control&quot;' />
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[federated.06nusnh1yvi7ad1gnk1421ny5gii].[none:metric:nk]'>
+            <groupfilter function='member' level='[none:metric:nk]' member='&quot;completion_rate&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.06nusnh1yvi7ad1gnk1421ny5gii].[none:metric:nk]</column>
+            <column>[federated.06nusnh1yvi7ad1gnk1421ny5gii].[none:Variation (general_metrics_fixed.csv):nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='font-size' data-class='subtotal' scope='rows' value='14' />
+          </style-rule>
+          <style-rule element='header'>
+            <format attr='width' field='[federated.06nusnh1yvi7ad1gnk1421ny5gii].[none:metric:nk]' value='136' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='font-size' scope='cols' value='15' />
+            <format attr='font-size' scope='rows' value='12' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='display-field-labels' scope='rows' value='false' />
+            <format attr='display-field-labels' scope='cols' value='false' />
+            <format attr='font-size' value='15' />
+          </style-rule>
+          <style-rule element='table-div'>
+            <format attr='stroke-size' scope='rows' value='0' />
+            <format attr='line-visibility' scope='rows' value='off' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <text column='[federated.06nusnh1yvi7ad1gnk1421ny5gii].[sum:value:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.06nusnh1yvi7ad1gnk1421ny5gii].[none:metric:nk]</rows>
+        <cols>[federated.06nusnh1yvi7ad1gnk1421ny5gii].[none:Variation (general_metrics_fixed.csv):nk]</cols>
+      </table>
+      <simple-id uuid='{E071A58C-DA71-498A-AD17-E12F5B776BC5}' />
+    </worksheet>
+    <worksheet name='error_rate'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='df_final_demo_experiment' name='federated.06nusnh1yvi7ad1gnk1421ny5gii' />
+          </datasources>
+          <datasource-dependencies datasource='federated.06nusnh1yvi7ad1gnk1421ny5gii'>
+            <column caption='Variation (general metrics fixed.csv)' datatype='string' name='[Variation (general_metrics_fixed.csv)]' role='dimension' type='nominal' />
+            <column caption='Metric' datatype='string' name='[metric]' role='dimension' type='nominal' />
+            <column-instance column='[Variation (general_metrics_fixed.csv)]' derivation='None' name='[none:Variation (general_metrics_fixed.csv):nk]' pivot='key' type='nominal' />
+            <column-instance column='[metric]' derivation='None' name='[none:metric:nk]' pivot='key' type='nominal' />
+            <column-instance column='[value]' derivation='Sum' name='[sum:value:qk]' pivot='key' type='quantitative' />
+            <column caption='Value' datatype='real' name='[value]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.06nusnh1yvi7ad1gnk1421ny5gii].[none:metric:nk]'>
+            <groupfilter function='member' level='[none:metric:nk]' member='&quot;error&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.06nusnh1yvi7ad1gnk1421ny5gii].[none:metric:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.06nusnh1yvi7ad1gnk1421ny5gii].[none:Variation (general_metrics_fixed.csv):nk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>([federated.06nusnh1yvi7ad1gnk1421ny5gii].[none:metric:nk] / [federated.06nusnh1yvi7ad1gnk1421ny5gii].[none:Variation (general_metrics_fixed.csv):nk])</rows>
+        <cols>[federated.06nusnh1yvi7ad1gnk1421ny5gii].[sum:value:qk]</cols>
+      </table>
+      <simple-id uuid='{909B556C-8268-42FF-B23B-984F95F8CBE4}' />
+    </worksheet>
+    <worksheet name='error_rate_control'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='df_final_demo_experiment' name='federated.06nusnh1yvi7ad1gnk1421ny5gii' />
+          </datasources>
+          <datasource-dependencies datasource='federated.06nusnh1yvi7ad1gnk1421ny5gii'>
+            <column caption='Variation (general metrics fixed.csv)' datatype='string' name='[Variation (general_metrics_fixed.csv)]' role='dimension' type='nominal' />
+            <column caption='Metric' datatype='string' name='[metric]' role='dimension' type='nominal' />
+            <column-instance column='[Variation (general_metrics_fixed.csv)]' derivation='None' name='[none:Variation (general_metrics_fixed.csv):nk]' pivot='key' type='nominal' />
+            <column-instance column='[metric]' derivation='None' name='[none:metric:nk]' pivot='key' type='nominal' />
+            <column-instance column='[value]' derivation='Sum' name='[sum:value:qk]' pivot='key' type='quantitative' />
+            <column caption='Value' datatype='real' name='[value]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.06nusnh1yvi7ad1gnk1421ny5gii].[none:Variation (general_metrics_fixed.csv):nk]'>
+            <groupfilter function='member' level='[none:Variation (general_metrics_fixed.csv):nk]' member='&quot;control&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.06nusnh1yvi7ad1gnk1421ny5gii].[none:metric:nk]'>
+            <groupfilter function='member' level='[none:metric:nk]' member='&quot;error&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.06nusnh1yvi7ad1gnk1421ny5gii].[none:metric:nk]</column>
+            <column>[federated.06nusnh1yvi7ad1gnk1421ny5gii].[none:Variation (general_metrics_fixed.csv):nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='text-format' field='[federated.06nusnh1yvi7ad1gnk1421ny5gii].[sum:value:qk]' value='p0.00%' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <text column='[federated.06nusnh1yvi7ad1gnk1421ny5gii].[sum:value:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.06nusnh1yvi7ad1gnk1421ny5gii].[none:metric:nk]</rows>
+        <cols>[federated.06nusnh1yvi7ad1gnk1421ny5gii].[none:Variation (general_metrics_fixed.csv):nk]</cols>
+      </table>
+      <simple-id uuid='{F507F556-E39C-4383-9BE5-CFCCF0E3002A}' />
+    </worksheet>
+    <worksheet name='error_rate_test'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='df_final_demo_experiment' name='federated.06nusnh1yvi7ad1gnk1421ny5gii' />
+          </datasources>
+          <datasource-dependencies datasource='federated.06nusnh1yvi7ad1gnk1421ny5gii'>
+            <column caption='Variation (general metrics fixed.csv)' datatype='string' name='[Variation (general_metrics_fixed.csv)]' role='dimension' type='nominal' />
+            <column caption='Metric' datatype='string' name='[metric]' role='dimension' type='nominal' />
+            <column-instance column='[Variation (general_metrics_fixed.csv)]' derivation='None' name='[none:Variation (general_metrics_fixed.csv):nk]' pivot='key' type='nominal' />
+            <column-instance column='[metric]' derivation='None' name='[none:metric:nk]' pivot='key' type='nominal' />
+            <column-instance column='[value]' derivation='Sum' name='[sum:value:qk]' pivot='key' type='quantitative' />
+            <column caption='Value' datatype='real' name='[value]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.06nusnh1yvi7ad1gnk1421ny5gii].[none:Variation (general_metrics_fixed.csv):nk]'>
+            <groupfilter function='member' level='[none:Variation (general_metrics_fixed.csv):nk]' member='&quot;test&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.06nusnh1yvi7ad1gnk1421ny5gii].[none:metric:nk]'>
+            <groupfilter function='member' level='[none:metric:nk]' member='&quot;error&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.06nusnh1yvi7ad1gnk1421ny5gii].[none:metric:nk]</column>
+            <column>[federated.06nusnh1yvi7ad1gnk1421ny5gii].[none:Variation (general_metrics_fixed.csv):nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='text-format' field='[federated.06nusnh1yvi7ad1gnk1421ny5gii].[sum:value:qk]' value='p0.00%' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='font-size' scope='cols' value='16' />
+            <format attr='font-size' scope='rows' value='15' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='display-field-labels' scope='rows' value='false' />
+            <format attr='display-field-labels' scope='cols' value='false' />
+            <format attr='font-size' value='15' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <text column='[federated.06nusnh1yvi7ad1gnk1421ny5gii].[sum:value:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.06nusnh1yvi7ad1gnk1421ny5gii].[none:metric:nk]</rows>
+        <cols>[federated.06nusnh1yvi7ad1gnk1421ny5gii].[none:Variation (general_metrics_fixed.csv):nk]</cols>
+      </table>
+      <simple-id uuid='{753589A7-E7F5-491F-AD98-6726A3551ECF}' />
+    </worksheet>
+  </worksheets>
+  <dashboards>
+    <dashboard enable-sort-zone-taborder='true' name='Dashboard 1'>
+      <style />
+      <size maxheight='768' maxwidth='1366' minheight='768' minwidth='1366' preset-index='0' sizing-mode='fixed' />
+      <zones>
+        <zone h='100000' id='4' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='97916' id='26' param='horz' type-v2='layout-flow' w='98828' x='586' y='1042'>
+            <zone h='97916' id='19' param='horz' type-v2='layout-flow' w='98828' x='586' y='1042'>
+              <zone h='97916' id='12' type-v2='layout-basic' w='98828' x='586' y='1042'>
+                <zone h='10026' id='3' param='horz' type-v2='layout-flow' w='98828' x='586' y='1042'>
+                  <zone forceUpdate='true' h='10026' id='5' type-v2='text' w='98828' x='586' y='1042'>
+                    <formatted-text>
+                      <run bold='true' fontalignment='1' fontsize='15'>Vanguards UI Comparison</run>
+                      <run fontalignment='1'>Æ&#10;</run>
+                      <run bold='true' fontalignment='1' fontsize='15'>Old UI (Control Variation)               New UI (Test Variation)</run>
+                    </formatted-text>
+                    <zone-style>
+                      <format attr='border-color' value='#000000' />
+                      <format attr='border-style' value='none' />
+                      <format attr='border-width' value='0' />
+                      <format attr='margin' value='4' />
+                    </zone-style>
+                  </zone>
+                </zone>
+                <zone h='87890' id='22' param='horz' type-v2='layout-flow' w='98828' x='586' y='11068'>
+                  <zone h='87890' id='24' name='completion_rate_test' w='16399' x='586' y='11068'>
+                    <layout-cache fixed-size-w='216' type-h='fixed' type-w='fixed' />
+                    <zone-style>
+                      <format attr='border-color' value='#000000' />
+                      <format attr='border-style' value='none' />
+                      <format attr='border-width' value='0' />
+                      <format attr='margin' value='4' />
+                    </zone-style>
+                  </zone>
+                  <zone h='87890' id='23' name='completion_rate_control' w='16106' x='16985' y='11068'>
+                    <layout-cache fixed-size-h='119' fixed-size-w='212' type-h='fixed' type-w='fixed' />
+                    <zone-style>
+                      <format attr='border-color' value='#000000' />
+                      <format attr='border-style' value='none' />
+                      <format attr='border-width' value='0' />
+                      <format attr='margin' value='4' />
+                    </zone-style>
+                  </zone>
+                </zone>
+              </zone>
+            </zone>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <size maxheight='1400' minheight='1400' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='21' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='97916' id='20' param='vert' type-v2='layout-flow' w='98828' x='586' y='1042'>
+                <zone forceUpdate='true' h='5555' id='5' type-v2='text' w='98828' x='586' y='1042'>
+                  <formatted-text>
+                    <run bold='true' fontalignment='1' fontsize='15'>Vanguards UI Comparison</run>
+                    <run fontalignment='1'>Æ&#10;</run>
+                    <run bold='true' fontalignment='1' fontsize='15'>Old UI (Control Variation)               New UI (Test Variation)</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{817B39E6-BFA8-4C7C-A1D7-CAF5CCCCAFE0}' />
+    </dashboard>
+  </dashboards>
+  <windows source-height='30'>
+    <window class='worksheet' name='completion_rate_graph'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card param='[federated.06nusnh1yvi7ad1gnk1421ny5gii].[none:metric:nk]' type='filter' />
+            <card pane-specification-id='0' param='[federated.06nusnh1yvi7ad1gnk1421ny5gii].[none:Variation (general_metrics_fixed.csv):nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{1B825180-6C4D-4731-AB85-C6993A4765DC}' />
+    </window>
+    <window class='worksheet' name='completion_rate_control'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{4FDEBE58-CCB2-4DA1-98EF-2C7E35498CCA}' />
+    </window>
+    <window class='worksheet' name='completion_rate_test'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card param='[federated.06nusnh1yvi7ad1gnk1421ny5gii].[none:metric:nk]' type='filter' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{EF5B34DE-E990-4CC6-9298-1F9CAF36B984}' />
+    </window>
+    <window class='worksheet' name='age_tenure'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{CD1704B7-05D7-4201-B9AB-1569F5F0CE01}' />
+    </window>
+    <window class='worksheet' name='avg_time_per_step'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card param='[federated.06nusnh1yvi7ad1gnk1421ny5gii].[none:metric:nk]' type='filter' />
+            <card pane-specification-id='0' param='[federated.06nusnh1yvi7ad1gnk1421ny5gii].[none:Variation (general_metrics_fixed.csv):nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{FC9E62D9-09CB-41F5-9D57-67085DDF26F2}' />
+    </window>
+    <window class='worksheet' name='error_rate'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card param='[federated.06nusnh1yvi7ad1gnk1421ny5gii].[none:metric:nk]' type='filter' />
+            <card pane-specification-id='0' param='[federated.06nusnh1yvi7ad1gnk1421ny5gii].[none:Variation (general_metrics_fixed.csv):nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{1EBD5035-81FD-48B4-B49D-4FC00C79C068}' />
+    </window>
+    <window class='worksheet' name='error_rate_test'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card param='[federated.06nusnh1yvi7ad1gnk1421ny5gii].[none:Variation (general_metrics_fixed.csv):nk]' type='filter' />
+            <card param='[federated.06nusnh1yvi7ad1gnk1421ny5gii].[none:metric:nk]' type='filter' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{C03A31E9-650A-4631-8C53-EEB91747D476}' />
+    </window>
+    <window class='worksheet' name='error_rate_control'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card param='[federated.06nusnh1yvi7ad1gnk1421ny5gii].[none:Variation (general_metrics_fixed.csv):nk]' type='filter' />
+            <card param='[federated.06nusnh1yvi7ad1gnk1421ny5gii].[none:metric:nk]' type='filter' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{5C15645A-EAE2-4B77-BCE9-E187098A343E}' />
+    </window>
+    <window class='worksheet' maximized='true' name='age_group_pie_control'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card param='[federated.06nusnh1yvi7ad1gnk1421ny5gii].[none:Variation:nk]' type='filter' />
+            <card pane-specification-id='0' param='[federated.06nusnh1yvi7ad1gnk1421ny5gii].[none:Calculation_575827495133151232:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{536F44F8-0667-4D82-9687-D040AAD0A0BC}' />
+    </window>
+    <window class='worksheet' name='age_group_pie_test'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card param='[federated.06nusnh1yvi7ad1gnk1421ny5gii].[none:Variation:nk]' type='filter' />
+            <card pane-specification-id='0' param='[federated.06nusnh1yvi7ad1gnk1421ny5gii].[none:Calculation_575827495133151232:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{8ABB4D1C-8114-4AC2-BDB7-A01CE2A1C405}' />
+    </window>
+    <window class='dashboard' name='Dashboard 1'>
+      <viewpoints>
+        <viewpoint name='completion_rate_control' />
+        <viewpoint name='completion_rate_test' />
+      </viewpoints>
+      <active id='-1' />
+      <simple-id uuid='{0E7100AC-F18C-4041-8C64-64BA4FA7EC2D}' />
+    </window>
+  </windows>
+</workbook>
