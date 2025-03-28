@@ -1,0 +1,17 @@
+Variation,metric,value
+test,completion_rate,45.9
+control,completion_rate,38.2
+test,avg_total_time_test,464.64
+control,avg_total_time_control,480.89
+test,error,0.30212125157805947
+control,error,0.2697695275243071
+control,start,174.73160951327435
+control,step_1,43.19035897435897
+control,step_2,38.8432870731327
+control,step_3,94.16332198530729
+control,confirm,129.96414559063197
+test,start,151.6989299396715
+test,step_1,37.81647666501448
+test,step_2,48.276524400169286
+test,step_3,97.35688782516577
+test,confirm,129.4911956766494
